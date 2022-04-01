@@ -3,7 +3,7 @@ import './loading.css'
 
 function Loading() {
     return (
-        <div className="load-page">
+        <div className="load-page span9">
         <div className="loader">
             <div>
                 <div>
