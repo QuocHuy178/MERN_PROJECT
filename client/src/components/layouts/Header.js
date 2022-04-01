@@ -14,8 +14,7 @@ function Header() {
       await axios.get('/user/logout')
       
       localStorage.clear()
-      setIsAdmin(false)
-      setIsLogged(false)
+      window.location.href = "/";
       
       // window.location.href = "/";
   }
