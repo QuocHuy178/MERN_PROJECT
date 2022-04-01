@@ -1,0 +1,39 @@
+img.radius {
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+img.slider {
+    width: 100%;
+    height: 140px;
+}
+
+img.slidebar {
+    width: 100%;
+    height: 140px;
+}
+
+img.product-new {
+    width: 100%;
+    height: 250px;
+}
+
+img.products-item {
+    width: 100%;
+    height: 160px;
+}
+
+.center-table-content {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
