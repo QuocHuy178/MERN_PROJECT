@@ -1,20 +1,72 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+
 
 
 function Cart() {
     const state = useContext(GlobalState)
-    const [cart] = state.userAPI.cart
+    const [cart, setCart] = state.userAPI.cart
+    const [token] = state.token
     const [total, setTotal] = useState(0)
+
+    useEffect(() => {
+        const getTotal = () => {
+            const total = cart.reduce((prev, item)=>{
+                return prev + (item.price * item.quantity)
+            },0)
+            setTotal(total)
+        }
+        getTotal()
+    }, [cart])
+
+    const addToCart = async () =>{
+        await axios.patch('user/addcart', {cart}, {
+            headers: {Authorization:token}
+        })
+    }
+
+    const increment = (id) =>{
+        cart.forEach(item => {
+            if(item._id === id){
+                item.quantity += 1
+            }
+        })
+        setCart([...cart])
+        addToCart()
+    }
+
+    const decrement = (id) =>{
+        cart.forEach(item => {
+            if(item._id === id){
+                item.quantity ===1 ? item.quantity = 1 : item.quantity -= 1
+            }
+        })
+        setCart([...cart])
+        addToCart()
+
+    }
+    
+    const removeProduct = id => {
+        if(window.confirm("Chắc Chắn Xóa Hông ??")){
+            cart.forEach((item, index) => {
+                if(item._id === id){
+                    cart.splice(index, 1)
+                }
+            })
+            setCart([...cart])
+            addToCart()
+        }
+    }
 
     if(cart.length==0)
             return <h2 style={{textAlign: "center" ,  fontSize: "5rem"}} >Cart Empty</h2>
 
     return (
        <div>{
-                cart.map(product => (
-                    <div>
+                cart.map(product => ( 
+                    <div key={product._id}>
                         <table className="table table-bordered">
                             <thead>
                             <tr>
@@ -34,19 +86,19 @@ function Cart() {
                                 <td>{product.title}</td>
                                 <td>
                                 <div className="input-append">
-                                    <input readOnly className="span1" style={{maxWidth: '34px'}} defaultValue="" id="appendedInputButtons" size={16} type="text" />
-                                    <a href="" className="btn" type="button">
-                                    <i className="icon-minus" />
-                                    </a>
-                                    <a href="" className="btn" type="button">
-                                    <i className="icon-plus" />
-                                    </a>
-                                    <a href="" className="btn btn-danger" type="button">
-                                    <i className="icon-remove icon-white" />
-                                    </a>
+                                    <input readOnly value={product.quantity} className="span1" style={{maxWidth: '34px'}}  id="appendedInputButtons" size={16} type="text" />
+                                    <button onClick={() => decrement(product._id)} href="" className="btn" type="button">
+                                        <i className="icon-minus" />
+                                    </button>
+                                    <button onClick={() => increment(product._id)} href="" className="btn" type="button">
+                                        <i className="icon-plus" />
+                                    </button>
+                                    <button onClick={() => removeProduct(product._id)} href="" className="btn btn-danger" type="button">
+                                        <i className="icon-remove icon-white" />
+                                    </button>
                                 </div>
                                 </td>
-                                <td>{product.price}VND</td>
+                                <td>{product.price}</td>
                                 <td>123123</td>
                                 <td>12345</td>
                             </tr>
