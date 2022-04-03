@@ -6,16 +6,18 @@ import Login from './auth/Login'
 import Register from './auth/Register'
 import NotFound from './utils/not_found/NotFound'
 import Cart from './cart/Cart'
-
+import Categories from './categories/Categories'
 import {GlobalState} from '../../GlobalState'
 
 function Pages() {
     const state = useContext(GlobalState)
     const [isLogged] = state.userAPI.isLogged
+    const [isAdmin] = state.userAPI.isAdmin
     return (
         <Routes>
             <Route path="/" element={<Products/>} />
             <Route path="/detail/:id" element={<DetailProduct/>} />
+            <Route path="/category" element={isAdmin ? <Categories/> : NotFound} />
             
             <Route path="/login" element={isLogged ? NotFound : <Login/>} />
             <Route path="/register" element={isLogged ? NotFound : <Register/>} />

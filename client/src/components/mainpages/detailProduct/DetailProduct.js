@@ -6,6 +6,7 @@ function DetailProduct() {
     const params = useParams()
     const state = useContext(GlobalState)
     const [products] = state.productsAPI.products
+    const addCart = state.userAPI.addCart
     const[detailProduct, setDetailproduct] = useState([])
 
     useEffect(() => {
@@ -48,8 +49,8 @@ function DetailProduct() {
           <label className="control-label"><span>{detailProduct.price}</span></label>
           <div className="controls">
             <input type="number" className="span1" placeholder="Qty." />
-            <Link  to="/cart">
-                <button type="submit" className="btn btn-large btn-primary pull-right"> Add to cart <i className=" icon-shopping-cart" /></button>
+            <Link  to={{}}>
+                <button onClick={()=> addCart(detailProduct)} type="submit" className="btn btn-large btn-primary pull-right"> Add to cart <i className=" icon-shopping-cart" /></button>
               </Link>
               
             
