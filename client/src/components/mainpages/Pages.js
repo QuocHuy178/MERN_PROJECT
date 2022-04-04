@@ -7,6 +7,8 @@ import Register from './auth/Register'
 import NotFound from './utils/not_found/NotFound'
 import Cart from './cart/Cart'
 import Categories from './categories/Categories'
+import CreateProduct from './createProduct/CreateProduct'
+
 import {GlobalState} from '../../GlobalState'
 
 function Pages() {
@@ -18,6 +20,7 @@ function Pages() {
             <Route path="/" element={<Products/>} />
             <Route path="/detail/:id" element={<DetailProduct/>} />
             <Route path="/category" element={isAdmin ? <Categories/> : NotFound} />
+            <Route path="/create_product" element={isAdmin ? <CreateProduct/> : NotFound} />
             
             <Route path="/login" element={isLogged ? NotFound : <Login/>} />
             <Route path="/register" element={isLogged ? NotFound : <Register/>} />
