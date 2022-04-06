@@ -21,6 +21,7 @@ function Pages() {
             <Route path="/detail/:id" element={<DetailProduct/>} />
             <Route path="/category" element={isAdmin ? <Categories/> : NotFound} />
             <Route path="/create_product" element={isAdmin ? <CreateProduct/> : NotFound} />
+            <Route path="/edit_product/:id" element={isAdmin ? <CreateProduct/> : NotFound} />
             
             <Route path="/login" element={isLogged ? NotFound : <Login/>} />
             <Route path="/register" element={isLogged ? NotFound : <Register/>} />
