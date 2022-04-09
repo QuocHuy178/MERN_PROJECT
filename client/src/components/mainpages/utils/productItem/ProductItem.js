@@ -23,6 +23,9 @@ function ProductItem({product, isAdmin, token, callback, setCallback}) {
         alert(err.response.data.msg)
       }
   }
+  function currencyFormat(num) {
+    return  num.toFixed().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + 'VND';
+ }
   if(loading) return <div className="span3"><Loading/></div>
     return (
       
@@ -53,10 +56,10 @@ function ProductItem({product, isAdmin, token, callback, setCallback}) {
                 
                 <div className="caption">
                   <h5>{product.title}</h5>
-                  <p> 
+                  <p  className="product-name"> 
                     {product.description}
                   </p>
-                  <div className="btn btn-large btn-primary" href="#">{product.price}</div>
+                  <div style={{display: 'block',width: '140px',margin:'auto'}} className="btn btn-large btn-primary" href="#">{currencyFormat(product.price)}</div>
                   <BtnRender product={product} deleteProduct={deleteProduct} />
                 </div>
               </div>

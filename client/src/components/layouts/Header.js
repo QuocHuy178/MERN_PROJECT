@@ -27,10 +27,10 @@ function Header() {
       return(
           <>
               <li className>
-                <Link to="/create_product" ><a href="">Create Product</a></Link>
+                <Link to="/create_product" >Create Product</Link>
               </li>
               <li className>
-                <Link to="/category" ><a href="">Categories</a></Link>
+                <Link to="/category" >Categories</Link>
               </li>
           </>
       )
@@ -40,10 +40,10 @@ function Header() {
       return(
           <>
                <li className>
-                <Link to="/history" ><a href="">History</a></Link>
+                <Link to="/history" >History</Link>
               </li>
               <li className>
-                <Link to="/" onClick={logoutUser} ><a href="">Logout</a></Link>
+                <Link to="/" onClick={logoutUser} >Logout</Link>
               </li>
           </>
       )
@@ -78,7 +78,7 @@ function Header() {
         <span className="icon-bar" />
         <span className="icon-bar" />
       </a>
-      <div className="navbar-inner">
+      <div className="navbar-inner" style={{display:'flex',justifyContent:'space-around'}}>
       <Link to="/" >
         <a className="brand" href=""><img src="themes/images/logo.png" alt="Bootsshop" /></a>
       </Link>
@@ -90,7 +90,7 @@ function Header() {
           {
             isAdmin ? '' :
             <li className>
-              <Link to="/Cart" ><a href="">Giỏ Hàng</a></Link>
+              <Link to="/Cart" >Giỏ Hàng</Link>
           </li>
           }
           

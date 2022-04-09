@@ -8,9 +8,9 @@ function Filters() {
     const [search, setSearch] = state.productsAPI.search
 
     return (
-        <div className="filter_menu">
+        <div className="filter_menu" style={{display: 'flex', alignItems: 'center'}}>
 
-        <div className="form-inline navbar-search">
+        <div style={{margin:0}} className="form-inline navbar-search">
           <select  value={sort} onChange={e => setSort(e.target.value)} className="srchTxt">
             <option value=''>Filter</option>
             <option value='sort=oldest'>Oldest</option>
@@ -21,7 +21,7 @@ function Filters() {
          
         </div>
 
-           <input type="text" value={search} placeholder="Enter your search!"
+           <input style={{margin:0,height:'30px',marginLeft:'10px'}} type="text" value={search} placeholder="Enter your search!"
             onChange={e => setSearch(e.target.value.toLowerCase())} />
 
         </div>
