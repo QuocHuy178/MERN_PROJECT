@@ -8,6 +8,8 @@ import NotFound from './utils/not_found/NotFound'
 import Cart from './cart/Cart'
 import Categories from './categories/Categories'
 import CreateProduct from './createProduct/CreateProduct'
+import OrderHistory from './history/OrderHistory'
+import OrderDetails from './history/OrderDetails'
 
 import {GlobalState} from '../../GlobalState'
 
@@ -22,6 +24,10 @@ function Pages() {
             <Route path="/category" element={isAdmin ? <Categories/> : NotFound} />
             <Route path="/create_product" element={isAdmin ? <CreateProduct/> : NotFound} />
             <Route path="/edit_product/:id" element={isAdmin ? <CreateProduct/> : NotFound} />
+
+            <Route path="/history" element={isLogged ? <OrderHistory/> : NotFound} />
+            <Route path="/history/:id" element={isLogged ? <OrderDetails/> : NotFound} />
+
             
             <Route path="/login" element={isLogged ? NotFound : <Login/>} />
             <Route path="/register" element={isLogged ? NotFound : <Register/>} />
