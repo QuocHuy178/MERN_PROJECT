@@ -1,6 +1,7 @@
 import React, {useState, useContext} from 'react'
 import {GlobalState} from '../../GlobalState'
 import { Link } from 'react-router-dom'
+import CateSidebar from '../mainpages/categories/CateSidebar'
 
 // import Menu from './icon/menu.svg'
 // import Close from './icon/close.svg'
@@ -20,16 +21,7 @@ function Sidebar() {
   </Link>
 
   </div>
-  <ul id="sideManu" className="nav nav-tabs nav-stacked">
-    <li className="subMenu open"><a> ELECTRONICS [230]</a>
-      <ul>
-        <li><a className="active" href="products.html"><i className="icon-chevron-right" />Cameras (100) </a></li>
-        <li><a href="products.html"><i className="icon-chevron-right" />Computers, Tablets &amp; laptop (30)</a></li>
-        <li><a href="products.html"><i className="icon-chevron-right" />Mobile Phone (80)</a></li>
-        <li><a href="products.html"><i className="icon-chevron-right" />Sound &amp; Vision (15)</a></li>
-      </ul>
-    </li>
-  </ul>
+  < CateSidebar/>
   <br />
   <div className="thumbnail">
     <img src="themes/images/products/panasonic.jpg" alt="Bootshop panasonoc New camera" />

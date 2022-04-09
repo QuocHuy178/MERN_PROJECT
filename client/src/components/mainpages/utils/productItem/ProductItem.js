@@ -47,12 +47,16 @@ function ProductItem({product, isAdmin, token, callback, setCallback}) {
 
             <div className="span3">
               <div className="thumbnail">
-                <a href=""><img className="radius products-item" src={product.images.url} alt="" /></a>
+              <Link id="btn_view" to={`/detail/${product._id}`}>
+                  <a href=""><img className="radius products-item" src={product.images.url} alt="" /></a>
+              </Link>
+                
                 <div className="caption">
                   <h5>{product.title}</h5>
                   <p> 
                     {product.description}
                   </p>
+                  <div className="btn btn-large btn-primary" href="#">{product.price}</div>
                   <BtnRender product={product} deleteProduct={deleteProduct} />
                 </div>
               </div>
