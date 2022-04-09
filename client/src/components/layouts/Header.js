@@ -1,6 +1,8 @@
 import React, {useState, useContext} from 'react'
 import { Link } from 'react-router-dom'
 import {GlobalState} from '../../GlobalState'
+import Filters from '../mainpages/products/Filters'
+
  
 import axios from 'axios'
 
@@ -18,6 +20,8 @@ function Header() {
       
       // window.location.href = "/";
   }
+
+
 
   const adminRouter = () =>{
       return(
@@ -78,19 +82,7 @@ function Header() {
       <Link to="/" >
         <a className="brand" href=""><img src="themes/images/logo.png" alt="Bootsshop" /></a>
       </Link>
-        
-        <form className="form-inline navbar-search" method="post" action="products.html">
-          <input id="srchFld" className="srchTxt" type="text" />
-          <select className="srchTxt">
-            <option>All</option>
-            <option>CLOTHES </option>
-            <option>FOOD AND BEVERAGES </option>
-            <option>HEALTH &amp; BEAUTY </option>
-            <option>SPORTS &amp; LEISURE </option>
-            <option>BOOKS &amp; ENTERTAINMENTS </option>
-          </select> 
-          <button type="submit" id="submitButton" className="btn btn-primary">Go</button>
-        </form>
+      <Filters/>
         <ul id="topMenu" className="nav pull-right">
           <li className>
             <Link to="/">{isAdmin ? 'Products' : 'Shop'}</Link>

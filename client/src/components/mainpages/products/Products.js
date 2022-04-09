@@ -2,6 +2,8 @@ import React, {useContext, useEffect} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import ProductItem from '../utils/productItem/ProductItem'
 import Loading from '../utils/loading/Loading'
+import LoadMore from './LoadMore'
+
 
 function Products() {
     const state = useContext(GlobalState)
@@ -13,6 +15,7 @@ function Products() {
       
     return (
         <>
+        
         <ul className="thumbnails">
             {
                 products.map(product => {
@@ -21,6 +24,7 @@ function Products() {
             })
         }
         </ul>
+        <LoadMore/>
         {products.length === 0 && <Loading/>}
         </>
     )
