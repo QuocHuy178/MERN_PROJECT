@@ -2,6 +2,9 @@ import React, {useContext, useState, useEffect} from 'react'
 import {useParams, Link} from 'react-router-dom'
 import {GlobalState} from '../../../GlobalState'
 import ProductItem from '../utils/productItem/ProductItem'
+function currencyFormat(num) {
+  return  num.toFixed().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + 'VND';
+}
 function DetailProduct() {
     const params = useParams()
     const state = useContext(GlobalState)
@@ -46,10 +49,10 @@ function DetailProduct() {
       <hr className="soft" />
       <form className="form-horizontal qtyFrm">
         <div className="control-group">
-          <label className="control-label"><span>{detailProduct.price} VND</span></label>
+          <label className="control-label"><span>{currencyFormat(detailProduct.price)}</span></label>
           <div className="controls">
             <Link  to={{}}>
-                <button onClick={()=> addCart(detailProduct)} type="submit" className="btn btn-large btn-primary pull-right"> Add to cart <i className=" icon-shopping-cart" /></button>
+                <button style={{padding:'7px 20px'}} onClick={()=> addCart(detailProduct)} type="submit" className="btn btn-large btn-primary pull-right"> Add to cart <i className=" icon-shopping-cart" /></button>
               </Link>
               
             
