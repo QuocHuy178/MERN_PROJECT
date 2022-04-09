@@ -17,6 +17,8 @@ code {
 @import url("./components/mainpages/products/Products.css");
 /* ---------------- Create Products ------------ */
 @import url("./components/mainpages/createProduct/createProduct.css");
+/* ---------------- History ------------ */
+@import url("./components/mainpages/history/history.css");
  /* .App {
     max-width: 100%;
     min-height: 100vh;
