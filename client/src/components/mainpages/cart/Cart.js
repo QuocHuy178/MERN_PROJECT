@@ -2,6 +2,8 @@ import React, {useContext, useState, useEffect} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import PayPalButton from './PayPalButton'
+
 
 
 
@@ -21,7 +23,7 @@ function Cart() {
         getTotal()
     }, [cart])
 
-    const addToCart = async () =>{
+    const addToCart = async (cart) =>{
         await axios.patch('user/addcart', {cart}, {
             headers: {Authorization:token}
         })
@@ -34,7 +36,7 @@ function Cart() {
             }
         })
         setCart([...cart])
-        addToCart()
+        addToCart(cart)
     }
 
     const decrement = (id) =>{
@@ -44,7 +46,7 @@ function Cart() {
             }
         })
         setCart([...cart])
-        addToCart()
+        addToCart(cart)
 
     }
     
@@ -56,8 +58,21 @@ function Cart() {
                 }
             })
             setCart([...cart])
-            addToCart()
+            addToCart(cart)
         }
+    }
+
+    const tranSuccess = async(payment) => {
+
+        const {paymentID, address} = payment;
+        await axios.post('/api/payment', {cart, paymentID, address},{
+            headers:{Authorization:token}
+        })
+
+        setCart([])
+        addToCart([])
+        alert("You have successfully an order")
+
     }
 
     if(cart.length==0)
@@ -114,6 +129,10 @@ function Cart() {
                                 <td colSpan={6} style={{textAlign: 'right'}}><strong>Tổng cộng = {total} </strong>
                                 </td>
                                 <td className="label label-important" style={{display: 'block'}}> <strong>VND</strong></td>
+                                <PayPalButton
+                                total={total}
+                                tranSuccess={tranSuccess}
+                                />
                             </tr>
                             <tr>
                                 <td colSpan={12} style={{textAlign: 'right'}}>
@@ -127,5 +146,6 @@ function Cart() {
 
     )
 }
+
 
 export default Cart

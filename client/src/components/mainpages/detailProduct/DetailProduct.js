@@ -46,9 +46,8 @@ function DetailProduct() {
       <hr className="soft" />
       <form className="form-horizontal qtyFrm">
         <div className="control-group">
-          <label className="control-label"><span>{detailProduct.price}</span></label>
+          <label className="control-label"><span>{detailProduct.price} VND</span></label>
           <div className="controls">
-            <input type="number" className="span1" placeholder="Qty." />
             <Link  to={{}}>
                 <button onClick={()=> addCart(detailProduct)} type="submit" className="btn btn-large btn-primary pull-right"> Add to cart <i className=" icon-shopping-cart" /></button>
               </Link>
@@ -58,7 +57,7 @@ function DetailProduct() {
         </div>
       </form>
       <hr className="soft" />
-      <h4>100 items in stock</h4>
+      <h4>Sold: {detailProduct.sold}</h4>
       <form className="form-horizontal qtyFrm pull-right">
         <div className="control-group">
         </div>
