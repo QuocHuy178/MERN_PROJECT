@@ -13,6 +13,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+input#appendedInputButtons {
+  height: 35px;
+
+}
 /* ---------------- Categories ------------ */
 @import url("./components/mainpages/categories/categories.css");
 /* ---------------- Products ------------ */

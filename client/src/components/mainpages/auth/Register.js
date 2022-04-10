@@ -27,9 +27,9 @@ function Register() {
         <div className="span9">
   <ul className="breadcrumb">
     <li><a href="index.php">Trang chủ</a> <span className="divider">/</span></li>
-    <li className="active">Đăng nhập</li>
+    <li className="active">Đăng kí</li>
   </ul>
-  <h3> Đăng nhập</h3>
+  <h3> Đăng kí</h3>
   <hr className="soft" />
   <div className="row">
     <div className="span1"> &nbsp;</div>
@@ -37,7 +37,7 @@ function Register() {
       <div className="well">
         <form onSubmit={registerSubmit}>
         <div className="control-group">
-            <label className="control-label" htmlFor="inputEmail2">Name</label>
+            <label className="control-label" htmlFor="inputEmail2">Tên</label>
             <div className="controls">
               <input className="span3" name="name" value={user.name} type="text" id="inputEmail2" placeholder="Name" required onChange={onChangeInput}/>
             </div>
@@ -56,8 +56,8 @@ function Register() {
           </div>
           <div className="control-group">
             <div className="controls">
-              <button className="btn btn-large btn-success" type="submit" name="register">Register </button>
-              <Link to="/login" ><a href="">Login</a></Link>
+              <button className="btn btn-large btn-success" type="submit" name="register">Đăng kí </button>
+              <Link to="/login" ><a href="">Đăng nhập</a></Link>
               
             </div>
           </div>

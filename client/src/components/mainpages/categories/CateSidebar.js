@@ -9,7 +9,7 @@ function CateSidebar() {
     return (
         <div>
              <ul id="sideManu" className="nav nav-tabs nav-stacked">
-                <li className="subMenu open"><a> Categories</a>
+                <li className="subMenu open"><a> Danh mục</a>
                     <ul>
                        
                         {

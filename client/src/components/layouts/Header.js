@@ -27,10 +27,10 @@ function Header() {
       return(
           <>
               <li className>
-                <Link to="/create_product" >Create Product</Link>
+                <Link to="/create_product" >Thêm Sản Phẩm</Link>
               </li>
               <li className>
-                <Link to="/category" >Categories</Link>
+                <Link to="/category" >Danh Mục</Link>
               </li>
           </>
       )
@@ -40,10 +40,10 @@ function Header() {
       return(
           <>
                <li className>
-                <Link to="/history" >History</Link>
+                <Link to="/history" >Lịch sử</Link>
               </li>
               <li className>
-                <Link to="/" onClick={logoutUser} >Logout</Link>
+                <Link to="/" onClick={logoutUser} >Đăng xuất</Link>
               </li>
           </>
       )
@@ -55,7 +55,7 @@ function Header() {
       <div id="header">
   <div className="container">
     <div id="welcomeLine" className="row">
-      <div className="span6">Welcome!<strong> <Link to="/">{isAdmin ? 'Admin' : 'GiaDungShop'}</Link></strong></div>
+      <div className="span6">Chào!<strong> <Link to="/">{isAdmin ? 'Admin' : 'GiaDungShop'}</Link></strong></div>
       <div className="span6">
         <div className="pull-right">
           {/* <a href="product_summary.html"><span className>Fr</span></a>
@@ -65,7 +65,7 @@ function Header() {
           <span className="btn btn-mini">$155.00</span>
           <a href="product_summary.html"><span className>$</span></a> */}
           <Link to="/Cart" >          
-            <a href=""><span className="btn btn-mini btn-primary"><i className="icon-shopping-cart icon-white" /> [ {cart.length} ] Itemes in your cart </span> </a> 
+            <a href=""><span className="btn btn-mini btn-primary"><i className="icon-shopping-cart icon-white" /> [ {cart.length} ] sản phẩm trong giỏ </span> </a> 
           </Link>
       
         </div>
@@ -85,7 +85,7 @@ function Header() {
       <Filters/>
         <ul id="topMenu" className="nav pull-right">
           <li className>
-            <Link to="/">{isAdmin ? 'Products' : 'Shop'}</Link>
+            <Link to="/">{isAdmin ? 'Sản phẩm' : ''}</Link>
           </li>
           {
             isAdmin ? '' :
@@ -99,7 +99,7 @@ function Header() {
           {
             isLogged ? loggedRouter() : 
             <li className>
-              <Link to="/Login" ><a href="" role="button" style={{paddingRight: 0}}><span className="btn btn-large btn-success">Login</span></a></Link>
+              <Link to="/Login" ><a href="" role="button" style={{paddingRight: 0}}><span className="btn btn-large btn-success">Đăng nhập</span></a></Link>
             </li>
           }
           

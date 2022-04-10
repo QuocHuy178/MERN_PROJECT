@@ -13,12 +13,12 @@ function BtnRender({product , deleteProduct}) {
             <>
           
               <Link id="btn_buy" to="#!" onClick={deleteProduct}>
-                <a className="btn" href=""> Delete <i className="icon-shopping-cart" /></a> 
+                <a className="btn" href=""> Xóa <i className="icon-shopping-cart" /></a> 
 
               </Link>
 
               <Link id="btn_buy" to={`/edit_product/${product._id}`}>
-                <a className="btn" href=""> Edit <i className="icon-shopping-cart" /></a> 
+                <a className="btn" href=""> Sửa <i className="icon-shopping-cart" /></a> 
 
               </Link>
               </>
@@ -30,7 +30,7 @@ function BtnRender({product , deleteProduct}) {
                 </Link>
 
                 <Link id="btn_buy" to="#!" onClick={()=>addCart(product)}>
-                  <a className="btn" href="#">Add to <i className="icon-shopping-cart" /></a> 
+                  <a className="btn" href="#">Thêm vào <i className="icon-shopping-cart" /></a> 
 
                 </Link>
               </>
