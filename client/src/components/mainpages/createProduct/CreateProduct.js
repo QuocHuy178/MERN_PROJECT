@@ -10,9 +10,9 @@ const initialState = {
   title: "",
   price: 0,
   description:
-    "How to and tutorial videos of cool CSS effect, Web Design ideas,JavaScript libraries, Node.",
+    "Nhập .....",
   content:
-    "Welcome to our channel Dev AT. Here you can learn web designing, UI/UX designing, html css tutorials, css animations and css effects, javascript and jquery tutorials and related so on.",
+    "Nhập .....",
   category: "",
   _id: ""
 }
@@ -183,7 +183,7 @@ function CreateProduct() {
             <option value="">Please Select a category</option>
             {
                 categories.map(category =>(
-                    <option value="category._id" key={category._id}>
+                    <option value={category._id} key={category._id}>
                         {category.name}
                     </option>
                 ))

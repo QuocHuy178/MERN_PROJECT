@@ -51,8 +51,8 @@ const loginSubmit = async e =>{
           </div>
           <div className="control-group">
             <div className="controls">
-              <button className="btn btn-large btn-success" type="submit" name="login">Login </button>
-              <Link to="/register" ><a href="">Register</a></Link>
+              <button className="btn btn-large btn-success" type="submit" name="login">Đăng nhập </button>
+              <Link to="/register" ><a href="">Đăng kí</a></Link>
               
             </div>
           </div>

@@ -91,7 +91,6 @@ function Cart() {
                                 <th>Số lượng</th>
                                 <th>Giá</th>
                                 <th>Tổng tiền sản phẩm</th>
-                                <th>Tổng cộng</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -115,8 +114,7 @@ function Cart() {
                                 </div>
                                 </td>
                                 <td>{product.price}</td>
-                                <td>123123</td>
-                                <td>12345</td>
+                                <td>{product.quantity * product.price}</td>
                             </tr>
                            
                             </tbody>

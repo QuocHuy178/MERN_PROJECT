@@ -10,36 +10,17 @@ function OrderHistory() {
     const [token] = state.token
     
 
-    // useEffect(() => {
-    //     if(token){
-    //         const getHistory = async() =>{
-    //             if(isAdmin){
-    //                 const res = await axios.get('/api/payment', {
-    //                     headers: {Authorization: token}
-    //                 })
-    //                 setHistory(res.data)
-    //             }else{
-    //                 const res = await axios.get('/user/history', {
-    //                     headers: {Authorization: token}
-    //                 })
-    //                 setHistory(res.data)
-    //             }
-    //         }
-    //         getHistory()
-    //     }
-    // },[token, isAdmin, setHistory])
-
     return (
         <div className="history-page">
-            <h2>History</h2>
+            <h2>Lịch sử mua hàng</h2>
 
-            <h4>You have {history.length} ordered</h4>
+            <h4>Bạn có {history.length} đơn hàng</h4>
 
             <table>
                 <thead>
                     <tr>
-                        <th>Payment ID</th>
-                        <th>Date of Purchased</th>
+                        <th>Mã hóa đơn</th>
+                        <th>Ngày đặt</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -49,7 +30,7 @@ function OrderHistory() {
                             <tr key={items._id}>
                                 <td>{items.paymentID}</td>
                                 <td>{new Date(items.createdAt).toLocaleDateString()}</td>
-                                <td><Link to={`/history/${items._id}`}>View</Link></td>
+                                <td><Link to={`/history/${items._id}`}>Xem</Link></td>
                             </tr>
                         ))
                     }

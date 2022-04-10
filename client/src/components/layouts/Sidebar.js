@@ -17,26 +17,12 @@ function Sidebar() {
 		<div id="sidebar" className="span3">
   <div className="well well-small">
   <Link to="/Cart" >
-    <a id="myCart" href=""><img src="themes/images/ico-cart.png" alt="cart" />{cart.length} Items in your cart  <span className="badge badge-warning pull-right">$155.00</span></a>
+    <a id="myCart" href=""><img src="themes/images/ico-cart.png" alt="cart" />{cart.length} sản phẩm trong giỏ  <span className="badge badge-warning pull-right">$155.00</span></a>
   </Link>
 
   </div>
   < CateSidebar/>
   <br />
-  <div className="thumbnail">
-    <img src="themes/images/products/panasonic.jpg" alt="Bootshop panasonoc New camera" />
-    <div className="caption">
-      <h5>Panasonic</h5>
-      <h4 style={{textAlign: 'center'}}><a className="btn" href="product_details.html"> <i className="icon-zoom-in" /></a> <a className="btn" href="#">Add to <i className="icon-shopping-cart" /></a> <a className="btn btn-primary" href="#">$222.00</a></h4>
-    </div>
-  </div><br />
-  <div className="thumbnail">
-    <img src="themes/images/products/kindle.png" title="Bootshop New Kindel" alt="Bootshop Kindel" />
-    <div className="caption">
-      <h5>Kindle</h5>
-      <h4 style={{textAlign: 'center'}}><a className="btn" href="product_details.html"> <i className="icon-zoom-in" /></a> <a className="btn" href="#">Add to <i className="icon-shopping-cart" /></a> <a className="btn btn-primary" href="#">$222.00</a></h4>
-    </div>
-  </div><br />
   <div className="thumbnail">
     <img src="themes/images/payment_methods.png" title="Bootshop Payment Methods" alt="Payments Methods" />
     <div className="caption">

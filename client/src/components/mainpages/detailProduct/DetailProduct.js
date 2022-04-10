@@ -24,9 +24,8 @@ function DetailProduct() {
     return (
         <div className="span9">
   <ul className="breadcrumb">
-    <li><a href="index.html">Home</a> <span className="divider">/</span></li>
-    <li><a href="products.html">Products</a> <span className="divider">/</span></li>
-    <li className="active">product Details</li>
+    <li><a href="index.html">Trang chủ</a> <span className="divider">/</span></li>
+    <li className="active">Chi tiết sản phẩm</li>
   </ul>	
   <div className="row">	  
     <div id="gallery" className="span3">
@@ -52,7 +51,7 @@ function DetailProduct() {
           <label className="control-label"><span>{currencyFormat(detailProduct.price)}</span></label>
           <div className="controls">
             <Link  to={{}}>
-                <button style={{padding:'7px 20px'}} onClick={()=> addCart(detailProduct)} type="submit" className="btn btn-large btn-primary pull-right"> Add to cart <i className=" icon-shopping-cart" /></button>
+                <button style={{padding:'7px 20px'}} onClick={()=> addCart(detailProduct)} type="submit" className="btn btn-large btn-primary pull-right"> Thêm vào giỏ <i className=" icon-shopping-cart" /></button>
               </Link>
               
             
@@ -60,24 +59,20 @@ function DetailProduct() {
         </div>
       </form>
       <hr className="soft" />
-      <h4>Sold: {detailProduct.sold}</h4>
       <form className="form-horizontal qtyFrm pull-right">
         <div className="control-group">
         </div>
       </form>
       <hr className="soft clr" />
-      <p>
-        {detailProduct.description}
-      </p>
-      <a className="btn btn-small pull-right" href="#detail">More Details</a>
+      <a className="btn btn-small pull-right" href="#detail">Thông tin thêm</a>
       <br className="clr" />
       <a href="#" name="detail" />
       <hr className="soft" />
     </div>
     <div className="span9">
       <ul id="productDetail" className="nav nav-tabs">
-        <li className="active"><a href="#home" data-toggle="tab">Product Details</a></li>
-        <li><a href="#profile" data-toggle="tab">Related Products</a></li>
+        <li className="active"><a href="#home" data-toggle="tab">Chi tiết sản phẩm</a></li>
+        <li><a href="#profile" data-toggle="tab">Sản phẩm tương tự</a></li>
       </ul>
       <div id="myTabContent" className="tab-content">
   <div className="tab-pane fade active in" id="home">
@@ -92,8 +87,8 @@ function DetailProduct() {
           <td className="techSpecTD2">{detailProduct.sold}</td>
         </tr>
         <tr className="techSpecRow">
-          <td className="techSpecTD1">Phân loại:</td>
-          <td className="techSpecTD2"> {detailProduct.category}</td>
+          <td className="techSpecTD1">Mô tả:</td>
+          <td className="techSpecTD2">{detailProduct.content}</td>
         </tr>
       </tbody>
     </table>

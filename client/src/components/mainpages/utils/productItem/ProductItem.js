@@ -24,7 +24,7 @@ function ProductItem({product, isAdmin, token, callback, setCallback}) {
       }
   }
   function currencyFormat(num) {
-    return  num.toFixed().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + 'VND';
+    return  num.toFixed().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VND';
  }
   if(loading) return <div className="span3"><Loading/></div>
     return (
